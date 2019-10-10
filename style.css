@@ -25,8 +25,9 @@ h1 {
 }
 
 #clock {
+  font-family: Play;
   margin: 0 auto;
-  border: 5px solid navy;
+  border: 5px solid;
   width: 2em;
   height: 2em;
   padding: 5em;
