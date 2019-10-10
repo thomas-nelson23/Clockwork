@@ -1,0 +1,35 @@
+html {
+  background-color: antiquewhite;
+  font-family: "Vibes";
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: bisque;
+  width: 50%;
+  padding-bottom: 5em;
+  margin-top: 3em;
+}
+
+header {
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5em;
+}
+
+#clock {
+  margin: 0 auto;
+  border: 5px solid navy;
+  width: 2em;
+  height: 2em;
+  padding: 5em;
+  border-radius: 50%;
+  justify-content: center;
+}
