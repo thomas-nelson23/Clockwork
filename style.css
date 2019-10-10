@@ -1,5 +1,5 @@
 html {
-  background-color: antiquewhite;
+  background-image: url(/GeoPat.jpg);
   font-family: "Vibes";
   display: flex;
   justify-content: center;
@@ -13,6 +13,8 @@ body {
   width: 50%;
   padding-bottom: 5em;
   margin-top: 3em;
+  border: 2em solid;
+  text-align: center;
 }
 
 header {
@@ -21,16 +23,23 @@ header {
 
 h1 {
   text-align: center;
-  font-size: 5em;
+  font-size: 6em;
+  font-weight: 700;
+  text-shadow: 4px 4px 4px seagreen;
 }
 
 #clock {
+  display: flex;
   font-family: Play;
+  font-weight: 800;
+  font-size: 5em;
+  text-align: center;
   margin: 0 auto;
-  border: 5px solid;
+  border: 10px solid;
   width: 2em;
   height: 2em;
-  padding: 5em;
+  padding: 2em;
   border-radius: 50%;
+  box-shadow: 10px 10px 50px seagreen;
   justify-content: center;
 }
