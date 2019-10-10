@@ -2,12 +2,14 @@ var updateTime = function() {
   var clockTime = new Date();
   var clockSpace = document.getElementById("clock");
   var meridian = "AM";
+  var military = false;
 
   var hours = clockTime.getHours();
   var minutes = clockTime.getMinutes();
   var seconds = clockTime.getSeconds();
 
   //chooses AM/PM and adjusts from military time
+
   if (hours > 11) {
     meridian = "PM";
   }
@@ -33,3 +35,7 @@ var updateTime = function() {
 
 var oneSecond = 1000;
 setInterval(updateTime, oneSecond);
+
+// myFunction() {
+//     military = !military;
+// }

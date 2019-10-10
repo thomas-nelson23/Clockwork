@@ -1,8 +1,10 @@
 html {
-  background-image: url(/GeoPat.jpg);
+  background-image: url(/GeoPat2.jpg);
   font-family: "Vibes";
   display: flex;
   justify-content: center;
+  --primary: rgb(80, 151, 139);
+  --secondary: rgb(238, 99, 123);
 }
 
 body {
@@ -15,6 +17,7 @@ body {
   margin-top: 3em;
   border: 2em solid;
   text-align: center;
+  margin: 2em;
 }
 
 header {
@@ -25,10 +28,11 @@ h1 {
   text-align: center;
   font-size: 6em;
   font-weight: 700;
-  text-shadow: 4px 4px 4px seagreen;
+  text-shadow: 4px 4px 4px var(--primary);
 }
 
 #clock {
+  background-color: var(--secondary);
   display: flex;
   font-family: Play;
   font-weight: 800;
@@ -39,7 +43,7 @@ h1 {
   width: 2em;
   height: 2em;
   padding: 2em;
-  border-radius: 50%;
-  box-shadow: 10px 10px 50px seagreen;
+  border-radius: 30%;
+  box-shadow: 20px 20px 100px var(--primary);
   justify-content: center;
 }
