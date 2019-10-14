@@ -55,6 +55,9 @@ var updateTime = function () {
   if (mHours == studyWindow.value) {
     document.getElementById("body").style.backgroundImage = "url('studyBooks.png')";
     document.getElementById("title").innerHTML = "Study Time!";
+    if (napWindow.value == studyWindow.value) {
+      studyWindow.value++;
+    }
 
   }
 
@@ -63,6 +66,9 @@ var updateTime = function () {
   if (mHours == napWindow.value) {
     document.getElementById("body").style.backgroundImage = "url('nap.jpg')";
     document.getElementById("title").innerHTML = "Nap Time!";
+    if (napWindow.value == studyWindow.value) {
+      napWindow.value++;
+    }
   }
 
   if (mHours != napWindow.value && mHours != studyWindow.value) {
@@ -70,9 +76,9 @@ var updateTime = function () {
     document.getElementById("title").innerHTML = "THIS IS A CLOCK.";
   }
 
-  if (napWindow.value == studyWindow.value) {
-    studyWindow.value++;
-  }
+  // if (napWindow.value == studyWindow.value) {
+  //   studyWindow.value++;
+  // }
 };
 
 //clock update every second
