@@ -1,15 +1,30 @@
-var updateTime = function() {
+var updateTime = function () {
   var clockTime = new Date();
   var clockSpace = document.getElementById("clock");
   var meridian = "AM";
-  var military = false;
+  var mHours = clockTime.getHours();
 
   var hours = clockTime.getHours();
   var minutes = clockTime.getMinutes();
   var seconds = clockTime.getSeconds();
 
-  //chooses AM/PM and adjusts from military time
+  var button = document.querySelector("a", "click");
 
+  //function timeSelect fires when dropdown item is selected
+  //document.addEventListener("click", timeSelect);
+  // a.onclick = timeSelect;
+  // document.getElementsById("1").onclick = timeSelect();
+
+  // function timeSelect() {
+  //   let tester = document.getElementsByClassName("time").id;
+  //   console.log(button);
+  //   document.getElementById("body").style.backgroundColor = "blue";
+  // }
+
+
+
+
+  //AM-PM logic and 24hr to 12hr adjustment
   if (hours > 11) {
     meridian = "PM";
   }
@@ -29,13 +44,42 @@ var updateTime = function() {
     seconds = "0" + seconds;
   }
 
+
+  console.log(studyWindow)
   //displays time
   clockSpace.innerHTML = hours + ":" + minutes + ":" + seconds + " " + meridian;
+
+
+
+  //changes backround during studyTime
+  if (mHours == studyWindow.value) {
+    document.getElementById("body").style.backgroundImage = "url('study.png')";
+    document.getElementById("title").innerHTML = "Study Time!";
+
+  } else {
+
+    //document.getElementById("title").innerHTML = "THIS IS A CLOCK.";
+  }
+
+
+  //changes background during nap time
+  if (mHours == napWindow.value) {
+    document.getElementById("body").style.backgroundImage = "url('nap.jpg')";
+    document.getElementById("title").innerHTML = "Nap Time!";
+  } else {
+    // document.getElementById("title").innerHTML = "THIS IS A CLOCK.";
+  }
+
+  if (mHours != napWindow.value && mHours != studyWindow.value) {
+    document.getElementById("body").style.backgroundImage = 'none';
+    document.getElementById("title").innerHTML = "THIS IS A CLOCK.";
+  }
 };
 
+//clock update every second
 var oneSecond = 1000;
 setInterval(updateTime, oneSecond);
 
-// myFunction() {
-//     military = !military;
-// }
+
+var studyWindow = document.querySelector("#study");
+var napWindow = document.querySelector("#nap");

@@ -7,6 +7,7 @@ html {
   --secondary: rgb(238, 99, 123);
 }
 
+
 body {
   display: flex;
   flex-direction: column;
@@ -18,10 +19,12 @@ body {
   border: 2em solid;
   text-align: center;
   margin: 2em;
+  border-radius: 20%;
 }
 
 header {
   justify-content: center;
+  font-weight: 900;
 }
 
 h1 {
@@ -46,4 +49,13 @@ h1 {
   border-radius: 30%;
   box-shadow: 20px 20px 100px var(--primary);
   justify-content: center;
+  margin-bottom: 20px;;
+}
+
+
+
+.select {
+font-weight: 800;
+font-size: 2em;
+margin-top: 20px;
 }
