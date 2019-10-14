@@ -69,6 +69,10 @@ var updateTime = function () {
     document.getElementById("body").style.backgroundImage = 'none';
     document.getElementById("title").innerHTML = "THIS IS A CLOCK.";
   }
+
+  if (napWindow.value == studyWindow.value) {
+    studyWindow.value++;
+  }
 };
 
 //clock update every second
