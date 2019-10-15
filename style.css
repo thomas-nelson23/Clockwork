@@ -20,11 +20,23 @@ body {
   text-align: center;
   margin: 2em;
   border-radius: 20%;
+  padding: 90px;
+  padding-top: 0px;
+  padding-bottom: 40px;
 }
 
 header {
   justify-content: center;
   font-weight: 900;
+  margin-bottom: 0px;
+  padding-top: 20px;
+  line-height: 120px;
+}
+
+h1#title {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
 }
 
 h1 {
@@ -52,10 +64,20 @@ h1 {
   margin-bottom: 20px;;
 }
 
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
 
 .select {
 font-weight: 800;
 font-size: 2em;
 margin-top: 20px;
+}
+
+button {
+  width: 200px;
+  margin: auto;
 }

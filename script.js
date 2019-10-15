@@ -10,19 +10,6 @@ var updateTime = function () {
 
   var button = document.querySelector("a", "click");
 
-  //function timeSelect fires when dropdown item is selected
-  //document.addEventListener("click", timeSelect);
-  // a.onclick = timeSelect;
-  // document.getElementsById("1").onclick = timeSelect();
-
-  // function timeSelect() {
-  //   let tester = document.getElementsByClassName("time").id;
-  //   console.log(button);
-  //   document.getElementById("body").style.backgroundColor = "blue";
-  // }
-
-
-
 
   //AM-PM logic and 24hr to 12hr adjustment
   if (hours > 11) {
@@ -44,47 +31,65 @@ var updateTime = function () {
     seconds = "0" + seconds;
   }
 
-
-  console.log(studyWindow)
   //displays time
   clockSpace.innerHTML = hours + ":" + minutes + ":" + seconds + " " + meridian;
-
-
 
   //changes backround during studyTime
   if (mHours == studyWindow.value) {
     document.getElementById("body").style.backgroundImage = "url('studyBooks.png')";
     document.getElementById("title").innerHTML = "Study Time!";
-    if (napWindow.value == studyWindow.value) {
-      studyWindow.value++;
-    }
-
   }
-
 
   //changes background during nap time
   if (mHours == napWindow.value) {
     document.getElementById("body").style.backgroundImage = "url('nap.jpg')";
     document.getElementById("title").innerHTML = "Nap Time!";
-    if (napWindow.value == studyWindow.value) {
-      napWindow.value++;
-    }
   }
 
-  if (mHours != napWindow.value && mHours != studyWindow.value) {
+  //changes background during lunch time
+  if (mHours == lunchWindow.value) {
+    document.getElementById("body").style.backgroundImage = "url('lunch.jpg')";
+    document.getElementById("title").innerHTML = "Lunch Time!";
+  }
+
+  //resets background and title to default
+  if (mHours != napWindow.value && mHours != studyWindow.value && mHours != lunchWindow.value) {
     document.getElementById("body").style.backgroundImage = 'none';
     document.getElementById("title").innerHTML = "THIS IS A CLOCK.";
   }
 
-  // if (napWindow.value == studyWindow.value) {
-  //   studyWindow.value++;
-  // }
+  //changes time windows if the same one is selected twice
+  if (napWindow.value == studyWindow.value || napWindow.value == lunchWindow.value) {
+    napWindow.value++;
+  }
+  if (lunchWindow.value == studyWindow.value || lunchWindow.value == napWindow.value) {
+    lunchWindow.value++;
+  }
+
+
+  if (partyTime) {
+    document.getElementById("body").style.backgroundImage = "url('party.jpg')";
+    document.getElementById("title").innerHTML = "PARTY TIME!!!";
+  }
 };
+
+
 
 //clock update every second
 var oneSecond = 1000;
 setInterval(updateTime, oneSecond);
 
 
+//grabs select elements
 var studyWindow = document.querySelector("#study");
 var napWindow = document.querySelector("#nap");
+var lunchWindow = document.querySelector("#lunch");
+
+
+//party Time button
+let partyTime = false;
+document.getElementById("party").addEventListener("click", function () {
+  partyTime = !partyTime;
+  console.log(partyTime);
+});
+
